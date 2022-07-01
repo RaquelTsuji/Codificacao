@@ -1,0 +1,159 @@
+1º Diagrama de classe
+public interface Collection {
+	public void equals() {
+	}
+	public void add() {
+	}
+}
+
+public class Pedido {
+	String Itens_de_Linha[];
+	List list = new List();
+}
+
+public interface List extends Collection{
+	public void get() {
+	}
+}
+
+public abstract class Abstract_List implements List{
+	public void equal() {
+	}
+	public void get() {
+	}
+	public void add() {
+	}
+}
+
+public class ArrayList extends Abstract_List {
+	public void get() {
+	}
+	public void add() {
+	}
+}
+_________________________________________________________
+2º Diagrama de classe
+public class Project {
+	String name;
+	String description;
+
+	Feature f;
+	ReferenceSequence rs;
+	Source s;
+	Aligment a;
+}
+
+public class Feature {
+	String name;
+	String displayName;
+	String description;
+}
+
+public class FeatureLocation {
+	Variation v;
+	FeatureSegment fs;
+}
+
+public class Variation {
+	String name;
+	String displayName;
+	String description;
+	String scannerModuleName;
+	String translationType;
+
+	PatternLocation pl;
+}
+
+public class PatternLocation {
+	int refStart;
+	int refEnd;
+	String pattern;
+}
+
+public class FeatureSegment {
+	int refStart;
+	int refEnd;
+}
+
+public class ReferenceSequence {
+	String name;
+	String displayName;
+
+	FeatureLocation fl;
+}
+
+public class Source {
+	String name;
+
+	Sequence s;
+}
+
+public class Sequence {
+	String sequenceID;
+	String format;
+}
+
+public class AlignmentMember {
+	String referenceMember;
+
+	AlignedSegment as;
+}
+
+public class AlignedSegment {
+	int refStart;
+	int refEnd;
+	int memberStart;
+	int memberEnd
+}
+
+public class Alignment {
+	String name;
+	String displayName;
+	String description;
+
+	AlignmentMember am;
+}
+_________________________________________________________
+3º Diagrama de classe
+public class Molecular_sample {
+	public String molecule;
+}
+
+public class Anatomic_location {
+}
+
+public class Population {
+	public String race;
+	public String ethnicity;
+	public String primary_language;
+	public String language_family;
+}
+
+public class Panel extends Population{
+	public long size;
+	public String count_unit;
+	public boolean pooled;
+	public String type;
+
+	Individual i;
+}
+
+public class Individual extends Population{
+	public String father_id;
+	public String mother_id;
+	public String sex;
+	public String birth_date;
+	public int death_date;
+}
+
+public class Taxon {
+	public String rank;
+	public String scientific_name;
+}
+
+public class Geographic_location {
+	public double max_longitude;
+	public double max_latitude;
+	public double min_longitude;
+	public double min_latitude;
+}
